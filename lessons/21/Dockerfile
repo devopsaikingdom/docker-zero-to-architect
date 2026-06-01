@@ -1,0 +1,4 @@
+FROM postgres:16-alpine
+ENV POSTGRES_PASSWORD=kingdom123
+ENV POSTGRES_DB=devops_kingdom
+EXPOSE 5432

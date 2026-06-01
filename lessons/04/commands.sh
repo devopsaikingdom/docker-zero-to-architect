@@ -1,0 +1,14 @@
+#!/bin/bash
+# Lesson 04: Installing Software with RUN
+# DevOps AI Kingdom — Docker: Zero to Architect
+set -e
+
+docker build -t lesson04 .
+docker run -it lesson04
+# Inside:
+curl --version
+wget --version
+vim --version
+exit
+docker history lesson04
+docker images lesson04

@@ -1,0 +1,26 @@
+name: Build Docker Lessons
+
+on:
+  push:
+    branches: [main]
+    paths: ['lessons/**']
+  pull_request:
+    branches: [main]
+    paths: ['lessons/**']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        lesson: ['03','04','05','06','07','08','09','10','11','12','14','17','18','19','20','21','22','23','24','25']
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Lesson ${{ matrix.lesson }}
+        run: |
+          if [ -f lessons/${{ matrix.lesson }}/Dockerfile ]; then
+            docker build -t lesson${{ matrix.lesson }} lessons/${{ matrix.lesson }}/
+            echo "✅ Lesson ${{ matrix.lesson }} built successfully"
+          else
+            echo "⏭️ Lesson ${{ matrix.lesson }} has no Dockerfile (demo lesson)"
+          fi
