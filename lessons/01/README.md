@@ -1,28 +1,29 @@
-# Lesson 01: Hello World: What a Container Actually Is
+# Lesson 01: What a Container Actually Is
 
-> **DevOps AI Kingdom** — Docker: Zero to Architect
-
-## 🎯 Outcome
+## What You'll Learn
 Run your first container and understand what just happened.
 
-## 📺 YouTube
-**Docker Lesson 1: What a Container ACTUALLY Is (Not What You Think)**
-
-## 💼 LinkedIn Hook
-> Most people think containers are tiny VMs. They're not. Here's what happens when you run `docker run hello-world` — and the mental model that separates juniors from architects.
-
-## ⌨️ Commands
+## Commands
 ```bash
 docker run hello-world
 docker ps -a
 docker images
 ```
 
-## 🎙️ Commentary
-Before we build anything, let's prove Docker works. `docker run hello-world` pulls the image, creates a container, runs it, prints a message, and exits. That's the whole lifecycle: pull → run → exit. Mental model: a container is NOT a tiny VM. It's a normal Linux process isolated with namespaces and cgroups. `docker ps -a` shows our exited container. `docker images` shows what was pulled.
+## Explanation
+A container is **not** a tiny virtual machine. It's a normal Linux process isolated using namespaces and cgroups.
 
-## 🧠 Architect Aside
-> The thing that separates junior from senior is internalizing 'container = isolated process,' not 'container = small VM.' Everything else follows from that.
+When you run `docker run hello-world`, Docker:
+1. Checks if the image exists locally
+2. Pulls it from Docker Hub if not found
+3. Creates a container from the image
+4. Runs the container's default command
+5. The container exits when the command finishes
+
+`docker ps -a` shows all containers (including stopped ones). `docker images` shows what's been pulled.
+
+## Architect Note
+> The thing that separates junior from senior is internalizing that a container is an isolated process, not a small VM. Everything else in this course follows from that mental model.
 
 ---
-[← Previous](../01/README.md) | [Course Index](../../README.md) | [Next →](../02/README.md)
+ | [Course Index](../../README.md) | [Next →](../02/)

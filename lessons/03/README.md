@@ -1,17 +1,9 @@
 # Lesson 03: Your First Dockerfile
 
-> **DevOps AI Kingdom** — Docker: Zero to Architect
-
-## 🎯 Outcome
+## What You'll Learn
 Write a Dockerfile from scratch and build your first custom image.
 
-## 📺 YouTube
-**Docker Lesson 3: Write Your FIRST Dockerfile (From Scratch)**
-
-## 💼 LinkedIn Hook
-> Your first custom Docker image, built from a 3-line Dockerfile. But that simple file teaches you the 3 most important instructions: FROM, RUN, CMD. Here's the architect's way to think about each one.
-
-## ⌨️ Commands
+## Commands
 ```bash
 cat Dockerfile
 docker build -t my-first-image .
@@ -20,11 +12,17 @@ docker images | grep my-first-image
 docker history my-first-image
 ```
 
-## 🎙️ Commentary
-Now we create our own image. A Dockerfile is a recipe — each instruction becomes a layer. FROM sets the base image. RUN executes a command during build. CMD is what runs when the container starts. `docker build -t my-first-image .` reads the Dockerfile, executes each instruction, and tags the result. `docker history` shows you every layer and its size. This is how every production image starts.
+## Explanation
+A Dockerfile is a recipe — each instruction becomes a layer in the image.
 
-## 🧠 Architect Aside
-> Always combine RUN commands with && to reduce layers. Every RUN creates a new layer, and layers are cached. In production, you want minimal layers for smaller images and faster pulls. We'll optimize this pattern through the whole course.
+- `FROM` — sets the base image (every Dockerfile starts here)
+- `RUN` — executes a command during the build
+- `CMD` — the default command when the container starts
+
+`docker build -t my-first-image .` reads the Dockerfile, executes each instruction, and tags the result. `docker history` shows every layer and its size.
+
+## Architect Note
+> Always combine RUN commands with `&&` to reduce layers. Every RUN creates a new layer. In production, minimal layers = smaller images = faster pulls.
 
 ---
-[← Previous](../02/README.md) | [Course Index](../../README.md) | [Next →](../04/README.md)
+[← Previous](../02/) | [Course Index](../../README.md) | [Next →](../04/)

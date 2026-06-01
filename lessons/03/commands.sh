@@ -1,6 +1,5 @@
 #!/bin/bash
 # Lesson 03: Your First Dockerfile
-# DevOps AI Kingdom — Docker: Zero to Architect
 set -e
 
 cat Dockerfile

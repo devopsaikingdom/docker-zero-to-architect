@@ -1,6 +1,5 @@
 #!/bin/bash
 # Lesson 06: ENV and ARG: Build-Time vs Runtime Config
-# DevOps AI Kingdom — Docker: Zero to Architect
 set -e
 
 cat > app.py << 'EOF'

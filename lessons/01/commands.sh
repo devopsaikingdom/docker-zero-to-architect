@@ -1,6 +1,5 @@
 #!/bin/bash
-# Lesson 01: Hello World: What a Container Actually Is
-# DevOps AI Kingdom — Docker: Zero to Architect
+# Lesson 01: What a Container Actually Is
 set -e
 
 docker run hello-world
