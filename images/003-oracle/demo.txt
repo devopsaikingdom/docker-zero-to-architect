@@ -1,0 +1,24 @@
+shuf -n 1 ----- picks one at random
+tr '|' '\n' ----  tr turns the pipes into separate lines,
+
+sayings="Ship it. | Cache is king. | Logs never lie. | One process, one container. | Pin your versions."
+
+
+shipit.
+cache is king 
+logs never lie 
+
+
+RUN - executes a command AT BUILD TIMe
+RUN apk add figlet, 
+
+
+RUN vs CMD ---- 
+
+
+
+
+RUN apk add --no-cache figlet && apk add --no-cache curl
+
+
+every RUN is a layer
