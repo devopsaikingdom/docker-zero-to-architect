@@ -2,5 +2,4 @@ FROM alpine:3.20
 
 RUN apk add --no-cache curl jq bash procps
 
-ENTRYPOINT bash
-
+ENTRYPOINT ["bash"]
