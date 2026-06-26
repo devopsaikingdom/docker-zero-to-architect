@@ -1,0 +1,10 @@
+ARG ALPINE_VERSION=3.20
+FROM alpine:${ALPINE_VERSION}
+
+ARG BANNER_TEXT="Hello Kingdom"
+
+RUN apk add --no-cache figlet
+ENV DISPLAY_TEXT=$BANNER_TEXT
+
+
+CMD figlet "$DISPLAY_TEXT"
